@@ -1,0 +1,291 @@
+id: 'example_paged'
+slots: 54
+title: '&8&lItem Shop &7— &ePage {page}&8/&7{max_page}'
+pages: 3
+refresh:
+  enabled: false
+  rate: 40
+items:
+  filler:
+    material: BLACK_STAINED_GLASS_PANE
+    slot: -1
+    display_name: ' '
+  prev_page:
+    material: ARROW
+    slot: 48
+    display_name: '&e← Previous Page'
+    page_nav: true
+    actions:
+      - '[PAGE_PREV]'
+  next_page:
+    material: ARROW
+    slot: 50
+    display_name: '&eNext Page →'
+    page_nav: true
+    actions:
+      - '[PAGE_NEXT]'
+  page_indicator:
+    material: PAPER
+    slot: 49
+    display_name: '&7Page &e{page} &7/ &e{max_page}'
+    page_nav: true
+    actions: []
+  close_btn:
+    material: BARRIER
+    slot: 53
+    display_name: '&cClose'
+    page_nav: true
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[CLOSE]'
+  balance:
+    material: GOLD_INGOT
+    slot: 52
+    page_nav: true
+    glow: true
+    display_name: '&6&lBalance: &e%quickmenus_balance_formatted%'
+    lore:
+      - '&eClick to check balance'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[MESSAGE] &7Balance: &e%quickmenus_balance_formatted%'
+  sword:
+    material: DIAMOND_SWORD
+    slot: 10
+    page: 1
+    glow: true
+    display_name: '&b&lDiamond Sword'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&7A powerful blade.'
+      - ''
+      - '&eCost: &f$250'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 250'
+      - '[ECO_WITHDRAW] 250'
+      - '[MESSAGE] &aPurchased &bDiamond Sword &afor &e$250&a!'
+      - '[CONSOLE] give %player_name% diamond_sword 1'
+  chestplate:
+    material: DIAMOND_CHESTPLATE
+    slot: 12
+    page: 1
+    glow: true
+    display_name: '&b&lDiamond Chestplate'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&7Top-tier protection.'
+      - ''
+      - '&eCost: &f$400'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 400'
+      - '[ECO_WITHDRAW] 400'
+      - '[MESSAGE] &aPurchased &bDiamond Chestplate &afor &e$400&a!'
+      - '[CONSOLE] give %player_name% diamond_chestplate 1'
+  helmet:
+    material: DIAMOND_HELMET
+    slot: 14
+    page: 1
+    glow: true
+    display_name: '&b&lDiamond Helmet'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&7Essential head protection.'
+      - ''
+      - '&eCost: &f$200'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 200'
+      - '[ECO_WITHDRAW] 200'
+      - '[MESSAGE] &aPurchased &bDiamond Helmet &afor &e$200&a!'
+      - '[CONSOLE] give %player_name% diamond_helmet 1'
+  boots:
+    material: DIAMOND_BOOTS
+    slot: 16
+    page: 1
+    glow: true
+    display_name: '&b&lDiamond Boots'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&7Speed meets defense.'
+      - ''
+      - '&eCost: &f$200'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 200'
+      - '[ECO_WITHDRAW] 200'
+      - '[MESSAGE] &aPurchased &bDiamond Boots &afor &e$200&a!'
+      - '[CONSOLE] give %player_name% diamond_boots 1'
+  bow:
+    material: BOW
+    slot: 10
+    page: 2
+    glow: false
+    display_name: '&a&lPower Bow'
+    lore:
+      - '&7Ranged devastation.'
+      - ''
+      - '&eCost: &f$150'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 150'
+      - '[ECO_WITHDRAW] 150'
+      - '[MESSAGE] &aPurchased &aPower Bow &afor &e$150&a!'
+      - '[CONSOLE] give %player_name% bow 1'
+  golden_apple:
+    material: GOLDEN_APPLE
+    slot: 12
+    page: 2
+    amount: 16
+    display_name: '&6Golden Apples &7x16'
+    lore:
+      - '&7Clutch healing.'
+      - ''
+      - '&eCost: &f$200'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 200'
+      - '[ECO_WITHDRAW] 200'
+      - '[MESSAGE] &aPurchased 16x &6Golden Apple &afor &e$200&a!'
+      - '[CONSOLE] give %player_name% golden_apple 16'
+  ender_pearl:
+    material: ENDER_PEARL
+    slot: 14
+    page: 2
+    amount: 8
+    display_name: '&5Ender Pearls &7x8'
+    lore:
+      - '&7Teleport with precision.'
+      - ''
+      - '&eCost: &f$300'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 300'
+      - '[ECO_WITHDRAW] 300'
+      - '[MESSAGE] &aPurchased 8x &5Ender Pearl &afor &e$300&a!'
+      - '[CONSOLE] give %player_name% ender_pearl 8'
+  tnt:
+    material: TNT
+    slot: 16
+    page: 2
+    amount: 4
+    display_name: '&cTNT &7x4'
+    lore:
+      - '&7Explosive fun.'
+      - ''
+      - '&eCost: &f$500'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 500'
+      - '[ECO_WITHDRAW] 500'
+      - '[MESSAGE] &aPurchased 4x &cTNT &afor &e$500&a!'
+      - '[CONSOLE] give %player_name% tnt 4'
+  elytra:
+    material: ELYTRA
+    slot: 10
+    page: 3
+    glow: true
+    display_name: '&d&lElytra'
+    item_flags:
+      - HIDE_ATTRIBUTES
+    lore:
+      - '&7Soar through the skies.'
+      - ''
+      - '&eCost: &f$1000'
+      - '&7Requires VIP permission'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[PERMISSION_CHECK] quickmenus.vip'
+      - '[ECO_BALANCE_CHECK] 1000'
+      - '[ECO_WITHDRAW] 1000'
+      - '[MESSAGE] &aPurchased &dElytra &afor &e$1000&a!'
+      - '[CONSOLE] give %player_name% elytra 1'
+  totem:
+    material: TOTEM_OF_UNDYING
+    slot: 12
+    page: 3
+    glow: true
+    display_name: '&6&lTotem of Undying'
+    lore:
+      - '&7Cheat death itself.'
+      - ''
+      - '&eCost: &f$2000'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 2000'
+      - '[ECO_WITHDRAW] 2000'
+      - '[MESSAGE] &aPurchased &6Totem of Undying &afor &e$2000&a!'
+      - '[CONSOLE] give %player_name% totem_of_undying 1'
+  xp_bottles:
+    material: EXPERIENCE_BOTTLE
+    slot: 14
+    page: 3
+    amount: 32
+    display_name: '&aXP Bottles &7x32'
+    lore:
+      - '&7Instant experience.'
+      - ''
+      - '&eCost: &f$100'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 100'
+      - '[ECO_WITHDRAW] 100'
+      - '[MESSAGE] &aPurchased 32x &aXP Bottles &afor &e$100&a!'
+      - '[CONSOLE] give %player_name% experience_bottle 32'
+  obsidian:
+    material: OBSIDIAN
+    slot: 16
+    page: 3
+    amount: 16
+    display_name: '&8Obsidian &7x16'
+    lore:
+      - '&7Fortify your base.'
+      - ''
+      - '&eCost: &f$250'
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&a&lClick to purchase'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[ECO_BALANCE_CHECK] 250'
+      - '[ECO_WITHDRAW] 250'
+      - '[MESSAGE] &aPurchased 16x &8Obsidian &afor &e$250&a!'
+      - '[CONSOLE] give %player_name% obsidian 16'

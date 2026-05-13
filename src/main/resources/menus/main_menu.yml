@@ -1,0 +1,60 @@
+id: 'main_menu'
+slots: 27
+title: '&5&lQuickMenus &7— &eMain Menu'
+pages: 1
+refresh:
+  enabled: true
+  rate: 40
+items:
+  filler:
+    material: BLACK_STAINED_GLASS_PANE
+    slot: -1
+    display_name: ' '
+  server_selector:
+    material: COMPASS
+    slot: 10
+    glow: true
+    display_name: '&5&lServer Selector'
+    lore:
+      - '&7Browse and connect to servers.'
+      - ''
+      - '&eClick to open'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[COMMAND] menu serverselector'
+  shop:
+    material: EMERALD
+    slot: 12
+    glow: true
+    display_name: '&a&lItem Shop'
+    lore:
+      - '&7Browse and purchase items.'
+      - '&7Supports multi-page & economy!'
+      - ''
+      - '&eClick to open'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[MESSAGE] &aOpening Item Shop...'
+      - '[COMMAND] menu example_paged'
+  balance:
+    material: GOLD_INGOT
+    slot: 14
+    glow: true
+    display_name: '&6&lYour Balance'
+    lore:
+      - '&7Balance: &e%quickmenus_balance_formatted%'
+      - ''
+      - '&eClick to check'
+    actions:
+      - '[SOUND] ENTITY_EXPERIENCE_ORB_PICKUP'
+      - '[MESSAGE] &7Your balance: &e%quickmenus_balance_formatted%'
+      - '[MESSAGE] &7Raw: &e%quickmenus_balance%'
+  close_btn:
+    material: BARRIER
+    slot: 22
+    display_name: '&c&lClose'
+    lore:
+      - '&7Click to close'
+    actions:
+      - '[SOUND] UI_BUTTON_CLICK'
+      - '[CLOSE]'

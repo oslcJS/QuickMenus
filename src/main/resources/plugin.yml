@@ -1,0 +1,33 @@
+name: QuickMenus
+version: ${project.version}
+main: com.quickmenus.QuickMenus
+api-version: '1.20'
+author: QuickPlugins
+description: Advanced GUI menu plugin with multi-page, animations, proxy connect, and PlaceholderAPI support.
+softdepend: [PlaceholderAPI, QuickEco]
+folia-supported: false
+commands:
+  quickmenus:
+    description: Main QuickMenus admin command
+    aliases: [qm, menus]
+    usage: /qm help
+  menu:
+    description: Open a menu by ID
+    aliases: [openmenu, m]
+    usage: /menu <id> [player]
+permissions:
+  quickmenus.*:
+    description: All QuickMenus permissions
+    default: op
+    children:
+      quickmenus.admin: true
+      quickmenus.use: true
+  quickmenus.admin:
+    description: Reload, create, edit menus
+    default: op
+  quickmenus.use:
+    description: Open menus with /menu
+    default: true
+  quickmenus.open.others:
+    description: Open menus for other players
+    default: op

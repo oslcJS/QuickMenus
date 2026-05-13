@@ -1,0 +1,72 @@
+id: 'serverselector'
+slots: 27
+title: '&5&lServer Selector'
+refresh:
+  enabled: false
+  rate: 40
+pages: 1
+items:
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    slot: -1
+    amount: 1
+    display_name: ' '
+    lore: []
+  cartel:
+    material: GOLD_BLOCK
+    slot: 10
+    amount: 1
+    glow: true
+    display_name: '&6&lCartelMC'
+    lore:
+      - '&7Economy-driven survival.'
+      - ''
+      - '&eClick to connect'
+    actions:
+      - '[CLOSE]'
+      - '[MESSAGE] &7Connecting to &6CartelMC&7...'
+      - '[PROXY] cartel'
+  ledger:
+    material: EMERALD_BLOCK
+    slot: 12
+    amount: 1
+    glow: true
+    display_name: '&a&lLedgerMC'
+    lore:
+      - '&7Ancap survival.'
+      - ''
+      - '&eClick to connect'
+    actions:
+      - '[CLOSE]'
+      - '[MESSAGE] &7Connecting to &aLedgerMC&7...'
+      - '[PROXY] pvp'
+  blockstrike:
+    material: IRON_SWORD
+    slot: 14
+    amount: 1
+    glow: true
+    item_flags:
+      - HIDE_ATTRIBUTES
+    display_name: '&c&lBlockStrike'
+    lore:
+      - '&7CS2-style combat.'
+      - ''
+      - '&eClick to connect'
+    actions:
+      - '[CLOSE]'
+      - '[MESSAGE] &7Connecting to &cBlockStrike&7...'
+      - '[PROXY] blockstrike'
+  semi:
+    material: SKELETON_SKULL
+    slot: 16
+    amount: 1
+    glow: true
+    display_name: '&f&lSemi-Hardcore'
+    lore:
+      - '&7Die and you wait 2 hours.'
+      - ''
+      - '&eClick to connect'
+    actions:
+      - '[CLOSE]'
+      - '[MESSAGE] &7Connecting to &fSemi-Hardcore&7...'
+      - '[PROXY] semi'

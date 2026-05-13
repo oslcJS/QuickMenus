@@ -1,0 +1,47 @@
+settings:
+  close-sound: UI_BUTTON_CLICK
+  open-sound: BLOCK_CHEST_OPEN
+  debug: false
+messages:
+  prefix: "&5[QuickMenus] &r"
+  no-permission: "&cYou don't have permission to open that menu."
+  menu-not-found: "&cMenu '&e{id}&c' not found."
+  player-not-found: "&cPlayer not found."
+  reloaded: "&aQuickMenus reloaded. Loaded &e{count} &amenus."
+hotbar-items:
+  enabled: true
+  sound: UI_BUTTON_CLICK
+  items:
+    book:
+      slot: 0
+      material: BOOK
+      amount: 1
+      glow: true
+      display_name: '&b&lMenu'
+      lore:
+        - '&7Click to open the menu'
+      actions:
+        - '[SOUND] UI_BUTTON_CLICK'
+        - '[COMMAND] menu main_menu'
+    server_selector:
+      slot: 4
+      material: COMPASS
+      amount: 1
+      glow: true
+      display_name: '&5&lServer Selector'
+      lore:
+        - '&7Click to select a server'
+      actions:
+        - '[SOUND] UI_BUTTON_CLICK'
+        - '[COMMAND] menu serverselector'
+    hide_players:
+      slot: 8
+      material: LIME_DYE
+      amount: 1
+      glow: true
+      display_name: '&a&lHide Players'
+      lore:
+        - '&7Players are currently &avisible&7.'
+        - '&eClick to toggle'
+      actions:
+        - '[TOGGLE_VANISH]'
