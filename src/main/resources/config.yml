@@ -23,7 +23,7 @@ hotbar-items:
   enabled: true
   sound: UI_BUTTON_CLICK
   items:
-    book:
+    menu:
       slot: 0
       material: BOOK
       amount: 1
@@ -33,7 +33,7 @@ hotbar-items:
         - '&7Click to open the menu'
       actions:
         - '[SOUND] UI_BUTTON_CLICK'
-        - '[COMMAND] menu main_menu'
+        - '[COMMAND] menu default'
     server_selector:
       slot: 4
       material: COMPASS
@@ -44,7 +44,7 @@ hotbar-items:
         - '&7Click to select a server'
       actions:
         - '[SOUND] UI_BUTTON_CLICK'
-        - '[COMMAND] menu serverselector'
+        - '[COMMAND] menu main'
     hide_players:
       slot: 8
       material: LIME_DYE
@@ -56,3 +56,12 @@ hotbar-items:
         - '&eClick to toggle'
       actions:
         - '[TOGGLE_VANISH]'
+    placeholder:
+      slot: 7
+      material: BARRIER
+      amount: 1
+      glow: false
+      display_name: '&8&lComing Soon'
+      lore:
+        - '&7More features coming soon!'
+      actions: []
