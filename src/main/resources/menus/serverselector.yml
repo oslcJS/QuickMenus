@@ -12,61 +12,60 @@ items:
     amount: 1
     display_name: ' '
     lore: []
-  cartel:
-    material: GOLD_BLOCK
+
+  # -----------------------------------------------------------------------
+  # PLACEHOLDER SERVER SLOTS — edit these to add your servers!
+  # Replace material, display_name, lore, and [PROXY] <server> in actions
+  # -----------------------------------------------------------------------
+
+  server_1:
+    material: GRAY_DYE
     slot: 10
     amount: 1
-    glow: true
-    display_name: '&6&lCartelMC'
+    glow: false
+    display_name: '&7&lServer 1'
     lore:
-      - '&7Economy-driven survival.'
+      - '&8Edit this in menus/serverselector.yml'
       - ''
-      - '&eClick to connect'
-    actions:
-      - '[CLOSE]'
-      - '[MESSAGE] &7Connecting to &6CartelMC&7...'
-      - '[PROXY] cartel'
-  ledger:
-    material: EMERALD_BLOCK
+      - '&7Set the name, material,'
+      - '&7and [PROXY] server name.'
+    actions: []
+
+  server_2:
+    material: GRAY_DYE
     slot: 12
     amount: 1
-    glow: true
-    display_name: '&a&lLedgerMC'
+    glow: false
+    display_name: '&7&lServer 2'
     lore:
-      - '&7Ancap survival.'
+      - '&8Edit this in menus/serverselector.yml'
       - ''
-      - '&eClick to connect'
-    actions:
-      - '[CLOSE]'
-      - '[MESSAGE] &7Connecting to &aLedgerMC&7...'
-      - '[PROXY] pvp'
-  blockstrike:
-    material: IRON_SWORD
+      - '&7Set the name, material,'
+      - '&7and [PROXY] server name.'
+    actions: []
+
+  server_3:
+    material: GRAY_DYE
     slot: 14
     amount: 1
-    glow: true
-    item_flags:
-      - HIDE_ATTRIBUTES
-    display_name: '&c&lBlockStrike'
+    glow: false
+    display_name: '&7&lServer 3'
     lore:
-      - '&7CS2-style combat.'
+      - '&8Edit this in menus/serverselector.yml'
       - ''
-      - '&eClick to connect'
-    actions:
-      - '[CLOSE]'
-      - '[MESSAGE] &7Connecting to &cBlockStrike&7...'
-      - '[PROXY] blockstrike'
-  semi:
-    material: SKELETON_SKULL
+      - '&7Set the name, material,'
+      - '&7and [PROXY] server name.'
+    actions: []
+
+  server_4:
+    material: GRAY_DYE
     slot: 16
     amount: 1
-    glow: true
-    display_name: '&f&lSemi-Hardcore'
+    glow: false
+    display_name: '&7&lServer 4'
     lore:
-      - '&7Die and you wait 2 hours.'
+      - '&8Edit this in menus/serverselector.yml'
       - ''
-      - '&eClick to connect'
-    actions:
-      - '[CLOSE]'
-      - '[MESSAGE] &7Connecting to &fSemi-Hardcore&7...'
-      - '[PROXY] semi'
+      - '&7Set the name, material,'
+      - '&7and [PROXY] server name.'
+    actions: []
