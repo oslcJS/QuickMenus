@@ -1,70 +1,65 @@
 id: 'default'
-slots: 54
-title: '&8&lMenu'
+slots: 27
+title: '&8>> &5&lMenu &8<<'
 pages: 1
 refresh:
   enabled: false
   rate: 40
 items:
   filler:
-    material: BLACK_STAINED_GLASS_PANE
+    material: PURPLE_STAINED_GLASS_PANE
     slot: -1
     display_name: ' '
-
-  close_btn:
-    material: BARRIER
-    slot: 49
-    display_name: '&c&lClose'
+  head:
+    material: PLAYER_HEAD
+    slot: 4
+    display_name: '&f%player_name%'
     lore:
-      - '&7Click to close'
+      - '&7(replace me in config)'
+  slot_1:
+    material: GRAY_DYE
+    slot: 11
+    glow: true
+    display_name: '&7&lSlot 1'
+    lore:
+      - '&7(replace me in config)'
+    actions: []
+  slot_2:
+    material: GRAY_DYE
+    slot: 12
+    glow: true
+    display_name: '&7&lSlot 2'
+    lore:
+      - '&7(replace me in config)'
+    actions: []
+  slot_3:
+    material: GRAY_DYE
+    slot: 13
+    glow: true
+    display_name: '&7&lSlot 3'
+    lore:
+      - '&7(replace me in config)'
+    actions: []
+  slot_4:
+    material: GRAY_DYE
+    slot: 14
+    glow: true
+    display_name: '&7&lSlot 4'
+    lore:
+      - '&7(replace me in config)'
+    actions: []
+  slot_5:
+    material: GRAY_DYE
+    slot: 15
+    glow: true
+    display_name: '&7&lSlot 5'
+    lore:
+      - '&7(replace me in config)'
+    actions: []
+  close:
+    material: BARRIER
+    slot: 22
+    display_name: '&cClose'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[CLOSE]'
-
-  # -----------------------------------------------------------------------
-  # PLACEHOLDER ITEMS - customize these however you like!
-  # Change: material, display_name, lore, slot, and actions
-  # Actions you can use:
-  #   [COMMAND] menu <id>       - open another menu
-  #   [PROXY] <server>          - connect to a BungeeCord/Velocity server
-  #   [MESSAGE] <text>          - send a chat message to the player
-  #   [CONSOLE] <cmd>           - run a console command
-  #   [CLOSE]                   - close the menu
-  #   [SOUND] <sound>           - play a sound
-  # -----------------------------------------------------------------------
-
-  placeholder_1:
-    material: GRAY_DYE
-    slot: 20
-    glow: false
-    display_name: '&7&lPlaceholder 1'
-    lore:
-      - '&8Edit this in menus/default.yml'
-      - ''
-      - '&7Change the material, name,'
-      - '&7lore, slot, and actions.'
-    actions: []
-
-  placeholder_2:
-    material: GRAY_DYE
-    slot: 22
-    glow: false
-    display_name: '&7&lPlaceholder 2'
-    lore:
-      - '&8Edit this in menus/default.yml'
-      - ''
-      - '&7Change the material, name,'
-      - '&7lore, slot, and actions.'
-    actions: []
-
-  placeholder_3:
-    material: GRAY_DYE
-    slot: 24
-    glow: false
-    display_name: '&7&lPlaceholder 3'
-    lore:
-      - '&8Edit this in menus/default.yml'
-      - ''
-      - '&7Change the material, name,'
-      - '&7lore, slot, and actions.'
-    actions: []

@@ -23,8 +23,8 @@ messages:
   settings-changed: "&aSet &e{key}&a to &e{value}&a."
   settings-unknown: "&cUnknown setting key: &e{key}"
 
-  demo-installed: "&aInstalled demo menu &e{id}&a."
-  demo-installed-all: "&aInstalled &e{count}&a demo menus."
+  demo-installed: "&aInstalled &e{id}&a as the default menu. Try &e/menu&a."
+  demo-installed-all: "&aInstalled &e{count}&a demo menus to &emenus/&a. Open with &e/menu <id>&a."
   demo-unknown: "&cNo such demo menu: &e{id}"
   demo-install-failed: "&cFailed to install demo: &e{id}"
 hotbar-items:

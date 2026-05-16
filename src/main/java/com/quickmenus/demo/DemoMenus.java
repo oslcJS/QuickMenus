@@ -39,9 +39,10 @@ public final class DemoMenus {
         if (d == null) return false;
         File menusDir = new File(plugin.getDataFolder(), "menus");
         menusDir.mkdirs();
-        File target = new File(menusDir, id + ".yml");
+        File target = new File(menusDir, "main_menu.yml");
         try {
-            Files.writeString(target.toPath(), d.yaml());
+            String yaml = d.yaml().replaceFirst("(?m)^id:\\s*'[^']*'", "id: 'default'");
+            Files.writeString(target.toPath(), yaml);
             return true;
         } catch (IOException e) {
             plugin.getLogger().warning("Demo install failed for " + id + ": " + e.getMessage());
@@ -50,9 +51,17 @@ public final class DemoMenus {
     }
 
     public static int installAll(QuickMenus plugin) {
+        File menusDir = new File(plugin.getDataFolder(), "menus");
+        menusDir.mkdirs();
         int n = 0;
-        for (String id : REGISTRY.keySet()) {
-            if (install(plugin, id)) n++;
+        for (Map.Entry<String, Demo> e : REGISTRY.entrySet()) {
+            File target = new File(menusDir, e.getKey() + ".yml");
+            try {
+                Files.writeString(target.toPath(), e.getValue().yaml());
+                n++;
+            } catch (IOException ex) {
+                plugin.getLogger().warning("Demo install failed for " + e.getKey() + ": " + ex.getMessage());
+            }
         }
         return n;
     }
@@ -73,11 +82,7 @@ public final class DemoMenus {
                 slot: 10
                 glow: true
                 display_name: '&a&lSurvival'
-                lore:
-                  - '&7Classic survival multiplayer.'
-                  - '&7Build, mine, explore.'
-                  - ''
-                  - '&eClick to join'
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[PROXY] survival'
@@ -86,11 +91,7 @@ public final class DemoMenus {
                 slot: 12
                 glow: true
                 display_name: '&b&lSkyblock'
-                lore:
-                  - '&7Island survival challenge.'
-                  - '&7Build your sky empire.'
-                  - ''
-                  - '&eClick to join'
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[PROXY] skyblock'
@@ -99,11 +100,7 @@ public final class DemoMenus {
                 slot: 14
                 glow: true
                 display_name: '&c&lCreative'
-                lore:
-                  - '&7Unlimited blocks.'
-                  - '&7Free creativity.'
-                  - ''
-                  - '&eClick to join'
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[PROXY] creative'
@@ -112,10 +109,7 @@ public final class DemoMenus {
                 slot: 16
                 glow: true
                 display_name: '&e&lMinigames'
-                lore:
-                  - '&7Quick matches and chaos.'
-                  - ''
-                  - '&eClick to join'
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[PROXY] minigames'
@@ -163,7 +157,7 @@ public final class DemoMenus {
                 page_nav: true
                 glow: true
                 display_name: '&6&lBalance: &e%quickmenus_balance_formatted%'
-                lore: ['&7Tap to see balance']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[MESSAGE] &7Balance: &e%quickmenus_balance_formatted%'
               close:
@@ -180,7 +174,7 @@ public final class DemoMenus {
                 glow: true
                 item_flags: ['HIDE_ATTRIBUTES']
                 display_name: '&b&lDiamond Sword'
-                lore: ['&7High-tier melee.', '', '&eCost: &f$250', '&7Balance: &e%quickmenus_balance_formatted%', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 250'
@@ -192,7 +186,7 @@ public final class DemoMenus {
                 slot: 13
                 page: 1
                 display_name: '&a&lPower Bow'
-                lore: ['&7Ranged precision.', '', '&eCost: &f$150', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 150'
@@ -206,7 +200,7 @@ public final class DemoMenus {
                 glow: true
                 item_flags: ['HIDE_ATTRIBUTES']
                 display_name: '&b&lDiamond Chestplate'
-                lore: ['&7Top defense.', '', '&eCost: &f$400', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 400'
@@ -220,7 +214,7 @@ public final class DemoMenus {
                 page: 2
                 amount: 16
                 display_name: '&6Golden Apples &7x16'
-                lore: ['&7Clutch healing.', '', '&eCost: &f$200', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 200'
@@ -233,7 +227,7 @@ public final class DemoMenus {
                 page: 2
                 amount: 8
                 display_name: '&5Ender Pearls &7x8'
-                lore: ['&7Teleport with precision.', '', '&eCost: &f$300', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 300'
@@ -246,7 +240,7 @@ public final class DemoMenus {
                 page: 2
                 amount: 32
                 display_name: '&aXP Bottles &7x32'
-                lore: ['&7Instant experience.', '', '&eCost: &f$100', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 100'
@@ -261,7 +255,7 @@ public final class DemoMenus {
                 glow: true
                 item_flags: ['HIDE_ATTRIBUTES']
                 display_name: '&d&lElytra'
-                lore: ['&7Soar through the skies.', '', '&eCost: &f$1000', '&7Requires &equickmenus.vip', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[PERMISSION_CHECK] quickmenus.vip'
@@ -275,7 +269,7 @@ public final class DemoMenus {
                 page: 3
                 glow: true
                 display_name: '&6&lTotem of Undying'
-                lore: ['&7Cheat death.', '', '&eCost: &f$2000', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 2000'
@@ -288,7 +282,7 @@ public final class DemoMenus {
                 page: 3
                 glow: true
                 display_name: '&8&lNetherite Ingot'
-                lore: ['&7Endgame material.', '', '&eCost: &f$1500', '', '&aClick to purchase']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[ECO_BALANCE_CHECK] 1500'
@@ -313,7 +307,7 @@ public final class DemoMenus {
                 slot: 10
                 glow: true
                 display_name: '&6&lFlame Trail'
-                lore: ['&7A trail of flames.', '', '&aClick to equip']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] BLOCK_FIRE_AMBIENT'
                   - '[MESSAGE] &aEquipped &6Flame Trail&a.'
@@ -323,7 +317,7 @@ public final class DemoMenus {
                 slot: 11
                 glow: true
                 display_name: '&c&lHearts Trail'
-                lore: ['&7Spread the love.', '', '&aClick to equip']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] ENTITY_EXPERIENCE_ORB_PICKUP'
                   - '[MESSAGE] &aEquipped &cHearts Trail&a.'
@@ -332,7 +326,7 @@ public final class DemoMenus {
                 slot: 12
                 glow: true
                 display_name: '&b&lSnow Trail'
-                lore: ['&7Cool and crisp.', '', '&aClick to equip']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] BLOCK_SNOW_BREAK'
                   - '[MESSAGE] &aEquipped &bSnow Trail&a.'
@@ -341,7 +335,7 @@ public final class DemoMenus {
                 slot: 13
                 glow: true
                 display_name: '&d&lMusic Trail'
-                lore: ['&7Carry a melody.', '', '&aClick to equip']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] BLOCK_NOTE_BLOCK_HARP'
                   - '[MESSAGE] &aEquipped &dMusic Trail&a.'
@@ -350,7 +344,7 @@ public final class DemoMenus {
                 slot: 14
                 glow: true
                 display_name: '&3&lSoul Trail'
-                lore: ['&7Wandering souls.', '', '&aClick to equip']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] PARTICLE_SOUL_ESCAPE'
                   - '[MESSAGE] &aEquipped &3Soul Trail&a.'
@@ -359,7 +353,7 @@ public final class DemoMenus {
                 slot: 15
                 glow: true
                 display_name: '&5&lDragon Trail'
-                lore: ['&7Ferocious aura.', '&7Requires &equickmenus.vip', '', '&aClick to equip']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[PERMISSION_CHECK] quickmenus.vip'
                   - '[SOUND] ENTITY_ENDER_DRAGON_GROWL'
@@ -368,7 +362,7 @@ public final class DemoMenus {
                 material: BARRIER
                 slot: 16
                 display_name: '&7&lClear Trail'
-                lore: ['&7Disable cosmetics.']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[MESSAGE] &7Cleared cosmetic trail.'
@@ -395,7 +389,7 @@ public final class DemoMenus {
                 slot: 10
                 glow: true
                 display_name: '&e&lSpawn'
-                lore: ['&7Return to spawn.']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] BLOCK_BEACON_ACTIVATE'
                   - '[PLAYER] spawn'
@@ -404,7 +398,7 @@ public final class DemoMenus {
                 slot: 11
                 glow: true
                 display_name: '&a&lMarket'
-                lore: ['&7Player shops.']
+                lore: ['&7(replace me in config)']
                 actions: ['[SOUND] UI_BUTTON_CLICK', '[PLAYER] warp market']
               pvp:
                 material: IRON_SWORD
@@ -412,35 +406,35 @@ public final class DemoMenus {
                 glow: true
                 item_flags: ['HIDE_ATTRIBUTES']
                 display_name: '&c&lPvP Arena'
-                lore: ['&7Combat zone.']
+                lore: ['&7(replace me in config)']
                 actions: ['[SOUND] UI_BUTTON_CLICK', '[PLAYER] warp pvp']
               farm:
                 material: WHEAT
                 slot: 13
                 glow: true
                 display_name: '&6&lFarms'
-                lore: ['&7Public farms area.']
+                lore: ['&7(replace me in config)']
                 actions: ['[SOUND] UI_BUTTON_CLICK', '[PLAYER] warp farm']
               nether:
                 material: NETHERRACK
                 slot: 14
                 glow: true
                 display_name: '&4&lNether Hub'
-                lore: ['&7Highway portals.']
+                lore: ['&7(replace me in config)']
                 actions: ['[SOUND] BLOCK_PORTAL_AMBIENT', '[PLAYER] warp nether']
               end:
                 material: END_STONE
                 slot: 15
                 glow: true
                 display_name: '&5&lEnd Hub'
-                lore: ['&7End portal hub.']
+                lore: ['&7(replace me in config)']
                 actions: ['[SOUND] BLOCK_END_PORTAL_FRAME_FILL', '[PLAYER] warp end']
               wild:
                 material: OAK_SAPLING
                 slot: 16
                 glow: true
                 display_name: '&2&lWilderness'
-                lore: ['&7Random teleport.']
+                lore: ['&7(replace me in config)']
                 actions: ['[SOUND] BLOCK_GRASS_BREAK', '[PLAYER] rtp']
               close:
                 material: BARRIER
@@ -464,43 +458,33 @@ public final class DemoMenus {
                 material: PLAYER_HEAD
                 slot: 4
                 display_name: '&f%player_name%'
-                lore:
-                  - '&7uuid: &8%player_uuid%'
-                  - '&7world: &f%player_world%'
+                lore: ['&7(replace me in config)']
               balance:
                 material: GOLD_INGOT
                 slot: 11
                 glow: true
                 display_name: '&6&lBalance'
-                lore:
-                  - '&7Current: &e%quickmenus_balance_formatted%'
-                  - '&7Rank: &e#%quickeco_rank%'
+                lore: ['&7(replace me in config)']
               health:
                 material: APPLE
                 slot: 12
                 display_name: '&c&lHealth'
-                lore:
-                  - '&7HP: &c%player_health% &7/ &c%player_max_health%'
-                  - '&7Hunger: &6%player_food_level%&7/20'
+                lore: ['&7(replace me in config)']
               location:
                 material: COMPASS
                 slot: 13
                 display_name: '&e&lLocation'
-                lore:
-                  - '&7x: &f%player_x%'
-                  - '&7y: &f%player_y%'
-                  - '&7z: &f%player_z%'
-                  - '&7world: &f%player_world%'
+                lore: ['&7(replace me in config)']
               playtime:
                 material: CLOCK
                 slot: 14
                 display_name: '&a&lPlaytime'
-                lore: ['&7Total: &f%statistic_play_one_minute%']
+                lore: ['&7(replace me in config)']
               ping:
                 material: FEATHER
                 slot: 15
                 display_name: '&b&lPing'
-                lore: ['&7Current: &f%player_ping% ms']
+                lore: ['&7(replace me in config)']
               close:
                 material: BARRIER
                 slot: 22
@@ -548,78 +532,61 @@ public final class DemoMenus {
                 page_nav: true
                 glow: true
                 display_name: '&a&lI Agree'
-                lore: ['&7Acknowledge the rules.']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] ENTITY_PLAYER_LEVELUP'
                   - '[MESSAGE] &aThanks for agreeing to the rules.'
                   - '[CLOSE]'
               # Page 1
-              respect:
+              rule1:
                 material: WRITTEN_BOOK
                 slot: 10
                 page: 1
-                display_name: '&c&l1. Respect'
-                lore:
-                  - '&7Treat everyone with respect.'
-                  - '&7No harassment, hate speech,'
-                  - '&7or personal attacks.'
-              cheating:
+                display_name: '&c&lRule 1'
+                lore: ['&7(replace me in config)']
+              rule2:
                 material: WRITTEN_BOOK
                 slot: 12
                 page: 1
-                display_name: '&c&l2. No Cheating'
-                lore:
-                  - '&7No hacks, x-ray, or exploits.'
-                  - '&7Auto-clickers are banned.'
-              chat:
+                display_name: '&c&lRule 2'
+                lore: ['&7(replace me in config)']
+              rule3:
                 material: WRITTEN_BOOK
                 slot: 14
                 page: 1
-                display_name: '&c&l3. Clean Chat'
-                lore:
-                  - '&7Keep it family friendly.'
-                  - '&7English only in global chat.'
-              spam:
+                display_name: '&c&lRule 3'
+                lore: ['&7(replace me in config)']
+              rule4:
                 material: WRITTEN_BOOK
                 slot: 16
                 page: 1
-                display_name: '&c&l4. No Spam'
-                lore:
-                  - '&7Do not flood chat.'
-                  - '&7No caps abuse.'
+                display_name: '&c&lRule 4'
+                lore: ['&7(replace me in config)']
               # Page 2
-              griefing:
+              rule5:
                 material: WRITTEN_BOOK
                 slot: 10
                 page: 2
-                display_name: '&c&l5. No Griefing'
-                lore:
-                  - '&7Do not destroy other players'
-                  - '&7builds or steal items.'
-              advertising:
+                display_name: '&c&lRule 5'
+                lore: ['&7(replace me in config)']
+              rule6:
                 material: WRITTEN_BOOK
                 slot: 12
                 page: 2
-                display_name: '&c&l6. No Advertising'
-                lore:
-                  - '&7No other server links.'
-                  - '&7No spam in DMs either.'
-              staff:
+                display_name: '&c&lRule 6'
+                lore: ['&7(replace me in config)']
+              rule7:
                 material: WRITTEN_BOOK
                 slot: 14
                 page: 2
-                display_name: '&c&l7. Listen to Staff'
-                lore:
-                  - '&7Follow staff instructions.'
-                  - '&7Appeals via Discord only.'
-              report:
+                display_name: '&c&lRule 7'
+                lore: ['&7(replace me in config)']
+              rule8:
                 material: WRITTEN_BOOK
                 slot: 16
                 page: 2
-                display_name: '&c&l8. Report Issues'
-                lore:
-                  - '&7Use /report or Discord.'
-                  - '&7Help keep the server safe.'
+                display_name: '&c&lRule 8'
+                lore: ['&7(replace me in config)']
             """;
 
     private static final String KITS = """
@@ -639,7 +606,7 @@ public final class DemoMenus {
                 glow: true
                 item_flags: ['HIDE_ATTRIBUTES']
                 display_name: '&f&lStarter Kit'
-                lore: ['&7Basic gear for new players.', '', '&aFree']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] ITEM_ARMOR_EQUIP_LEATHER'
                   - '[CONSOLE] kit starter %player_name%'
@@ -650,7 +617,7 @@ public final class DemoMenus {
                 glow: true
                 item_flags: ['HIDE_ATTRIBUTES']
                 display_name: '&e&lWarrior Kit'
-                lore: ['&7Iron sword + iron armor.', '', '&7Requires &equickmenus.kit.warrior']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[PERMISSION_CHECK] quickmenus.kit.warrior'
                   - '[SOUND] ITEM_ARMOR_EQUIP_IRON'
@@ -661,7 +628,7 @@ public final class DemoMenus {
                 slot: 14
                 glow: true
                 display_name: '&5&lMage Kit'
-                lore: ['&7Wand + potions.', '', '&7Requires &equickmenus.kit.mage']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[PERMISSION_CHECK] quickmenus.kit.mage'
                   - '[SOUND] ENTITY_EVOKER_CAST_SPELL'
@@ -673,7 +640,7 @@ public final class DemoMenus {
                 glow: true
                 item_flags: ['HIDE_ATTRIBUTES']
                 display_name: '&b&lVIP Kit'
-                lore: ['&7Diamond gear + extras.', '', '&7Requires &equickmenus.vip']
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[PERMISSION_CHECK] quickmenus.vip'
                   - '[SOUND] ENTITY_PLAYER_LEVELUP'
@@ -701,62 +668,43 @@ public final class DemoMenus {
                 material: WRITABLE_BOOK
                 slot: 4
                 display_name: '&a&lWhy Vote?'
-                lore:
-                  - '&7Voting helps the server grow.'
-                  - '&7You get rewards each vote.'
-                  - ''
-                  - '&7Click a site below to vote.'
+                lore: ['&7(replace me in config)']
               site1:
                 material: NETHER_STAR
                 slot: 11
                 glow: true
                 display_name: '&e&lVote Site 1'
-                lore:
-                  - '&7minecraft-server-list.com'
-                  - '&7Reward: &f$100 + 1 crate key'
-                  - ''
-                  - '&aClick to open'
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[MESSAGE] &7Open this link to vote:'
-                  - '[MESSAGE] &fhttps://minecraft-server-list.com'
+                  - '[MESSAGE] &fhttps://example.com'
               site2:
                 material: NETHER_STAR
                 slot: 13
                 glow: true
                 display_name: '&e&lVote Site 2'
-                lore:
-                  - '&7minecraftservers.org'
-                  - '&7Reward: &f$100 + 1 crate key'
-                  - ''
-                  - '&aClick to open'
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[MESSAGE] &7Open this link to vote:'
-                  - '[MESSAGE] &fhttps://minecraftservers.org'
+                  - '[MESSAGE] &fhttps://example.com'
               site3:
                 material: NETHER_STAR
                 slot: 15
                 glow: true
                 display_name: '&e&lVote Site 3'
-                lore:
-                  - '&7planetminecraft.com'
-                  - '&7Reward: &f$100 + 1 crate key'
-                  - ''
-                  - '&aClick to open'
+                lore: ['&7(replace me in config)']
                 actions:
                   - '[SOUND] UI_BUTTON_CLICK'
                   - '[MESSAGE] &7Open this link to vote:'
-                  - '[MESSAGE] &fhttps://planetminecraft.com'
+                  - '[MESSAGE] &fhttps://example.com'
               streak:
                 material: GOLD_BLOCK
                 slot: 22
                 glow: true
                 display_name: '&6&lVote Streak'
-                lore:
-                  - '&7Your streak: &e0 days'
-                  - '&75-day reward: &f$500'
-                  - '&730-day reward: &fVIP for a month'
+                lore: ['&7(replace me in config)']
               close:
                 material: BARRIER
                 slot: 26

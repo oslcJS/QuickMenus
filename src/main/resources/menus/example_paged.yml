@@ -45,7 +45,7 @@ items:
     glow: true
     display_name: '&6&lBalance: &e%quickmenus_balance_formatted%'
     lore:
-      - '&eClick to check balance'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[MESSAGE] &7Balance: &e%quickmenus_balance_formatted%'
@@ -58,12 +58,7 @@ items:
     item_flags:
       - HIDE_ATTRIBUTES
     lore:
-      - '&7A powerful blade.'
-      - ''
-      - '&eCost: &f$250'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 250'
@@ -79,12 +74,7 @@ items:
     item_flags:
       - HIDE_ATTRIBUTES
     lore:
-      - '&7Top-tier protection.'
-      - ''
-      - '&eCost: &f$400'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 400'
@@ -100,12 +90,7 @@ items:
     item_flags:
       - HIDE_ATTRIBUTES
     lore:
-      - '&7Essential head protection.'
-      - ''
-      - '&eCost: &f$200'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 200'
@@ -121,12 +106,7 @@ items:
     item_flags:
       - HIDE_ATTRIBUTES
     lore:
-      - '&7Speed meets defense.'
-      - ''
-      - '&eCost: &f$200'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 200'
@@ -140,12 +120,7 @@ items:
     glow: false
     display_name: '&a&lPower Bow'
     lore:
-      - '&7Ranged devastation.'
-      - ''
-      - '&eCost: &f$150'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 150'
@@ -159,12 +134,7 @@ items:
     amount: 16
     display_name: '&6Golden Apples &7x16'
     lore:
-      - '&7Clutch healing.'
-      - ''
-      - '&eCost: &f$200'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 200'
@@ -178,12 +148,7 @@ items:
     amount: 8
     display_name: '&5Ender Pearls &7x8'
     lore:
-      - '&7Teleport with precision.'
-      - ''
-      - '&eCost: &f$300'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 300'
@@ -197,12 +162,7 @@ items:
     amount: 4
     display_name: '&cTNT &7x4'
     lore:
-      - '&7Explosive fun.'
-      - ''
-      - '&eCost: &f$500'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 500'
@@ -218,13 +178,7 @@ items:
     item_flags:
       - HIDE_ATTRIBUTES
     lore:
-      - '&7Soar through the skies.'
-      - ''
-      - '&eCost: &f$1000'
-      - '&7Requires VIP permission'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[PERMISSION_CHECK] quickmenus.vip'
@@ -239,12 +193,7 @@ items:
     glow: true
     display_name: '&6&lTotem of Undying'
     lore:
-      - '&7Cheat death itself.'
-      - ''
-      - '&eCost: &f$2000'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 2000'
@@ -258,12 +207,7 @@ items:
     amount: 32
     display_name: '&aXP Bottles &7x32'
     lore:
-      - '&7Instant experience.'
-      - ''
-      - '&eCost: &f$100'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 100'
@@ -277,12 +221,7 @@ items:
     amount: 16
     display_name: '&8Obsidian &7x16'
     lore:
-      - '&7Fortify your base.'
-      - ''
-      - '&eCost: &f$250'
-      - '&7Balance: &e%quickmenus_balance_formatted%'
-      - ''
-      - '&a&lClick to purchase'
+      - '&7(replace me in config)'
     actions:
       - '[SOUND] UI_BUTTON_CLICK'
       - '[ECO_BALANCE_CHECK] 250'
