@@ -1,6 +1,6 @@
 id: 'example_paged'
 slots: 54
-title: '&8&lItem Shop &7— &ePage {page}&8/&7{max_page}'
+title: '&8&lItem Shop &7- &ePage {page}&8/&7{max_page}'
 pages: 3
 refresh:
   enabled: false
@@ -13,14 +13,14 @@ items:
   prev_page:
     material: ARROW
     slot: 48
-    display_name: '&e← Previous Page'
+    display_name: '&e<- Previous Page'
     page_nav: true
     actions:
       - '[PAGE_PREV]'
   next_page:
     material: ARROW
     slot: 50
-    display_name: '&eNext Page →'
+    display_name: '&eNext Page ->'
     page_nav: true
     actions:
       - '[PAGE_NEXT]'

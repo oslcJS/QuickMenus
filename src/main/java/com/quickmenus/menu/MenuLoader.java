@@ -70,7 +70,7 @@ public final class MenuLoader {
         try {
             mat = Material.valueOf(matName);
         } catch (IllegalArgumentException e) {
-            plugin.getLogger().warning("Unknown material '" + matName + "' in item '" + key + "' — defaulting to STONE.");
+            plugin.getLogger().warning("Unknown material '" + matName + "' in item '" + key + "' - defaulting to STONE.");
             mat = Material.STONE;
         }
         int slot       = sec.getInt("slot", -1);

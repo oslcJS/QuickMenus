@@ -19,6 +19,14 @@ messages:
   menu-not-found: "&cMenu '&e{id}&c' not found."
   player-not-found: "&cPlayer not found."
   reloaded: "&aQuickMenus reloaded. Loaded &e{count} &amenus."
+
+  settings-changed: "&aSet &e{key}&a to &e{value}&a."
+  settings-unknown: "&cUnknown setting key: &e{key}"
+
+  demo-installed: "&aInstalled demo menu &e{id}&a."
+  demo-installed-all: "&aInstalled &e{count}&a demo menus."
+  demo-unknown: "&cNo such demo menu: &e{id}"
+  demo-install-failed: "&cFailed to install demo: &e{id}"
 hotbar-items:
   enabled: true
   sound: UI_BUTTON_CLICK

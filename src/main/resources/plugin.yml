@@ -23,11 +23,20 @@ permissions:
       quickmenus.admin: true
       quickmenus.use: true
   quickmenus.admin:
-    description: Reload, create, edit menus
+    description: Reload, preview, settings, demo install
     default: op
+    children:
+      qm.reload: true
+      qm.settings: true
+      qm.demo: true
+      qm.preview: true
   quickmenus.use:
     description: Open menus with /menu
     default: true
   quickmenus.open.others:
     description: Open menus for other players
     default: op
+  qm.reload: { default: op }
+  qm.settings: { default: op }
+  qm.demo: { default: op }
+  qm.preview: { default: op }

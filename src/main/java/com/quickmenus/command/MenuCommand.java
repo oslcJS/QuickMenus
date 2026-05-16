@@ -20,7 +20,7 @@ public final class MenuCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
-            Msg.raw(sender, "&5&lQuickMenus &7— &e/menu <id> [player]");
+            Msg.raw(sender, "&5&lQuickMenus &7- &e/menu <id> [player]");
             return true;
         }
         String id = args[0];

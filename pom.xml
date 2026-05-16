@@ -4,11 +4,11 @@
 
     <groupId>com.quickmenus</groupId>
     <artifactId>QuickMenus</artifactId>
-    <version>1.8</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
 
     <name>QuickMenus</name>
-    <description>Free, open-source advanced GUI menu plugin with multi-page support, animations, proxy connect, and PlaceholderAPI.</description>
+    <description>Free, open-source GUI menu plugin with multi-page support, proxy connect, demo menus, and PlaceholderAPI.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

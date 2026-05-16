@@ -22,15 +22,15 @@ items:
       - '[CLOSE]'
 
   # -----------------------------------------------------------------------
-  # PLACEHOLDER ITEMS — customize these however you like!
+  # PLACEHOLDER ITEMS - customize these however you like!
   # Change: material, display_name, lore, slot, and actions
   # Actions you can use:
-  #   [COMMAND] menu <id>       — open another menu
-  #   [PROXY] <server>          — connect to a BungeeCord/Velocity server
-  #   [MESSAGE] <text>          — send a chat message to the player
-  #   [CONSOLE] <cmd>           — run a console command
-  #   [CLOSE]                   — close the menu
-  #   [SOUND] <sound>           — play a sound
+  #   [COMMAND] menu <id>       - open another menu
+  #   [PROXY] <server>          - connect to a BungeeCord/Velocity server
+  #   [MESSAGE] <text>          - send a chat message to the player
+  #   [CONSOLE] <cmd>           - run a console command
+  #   [CLOSE]                   - close the menu
+  #   [SOUND] <sound>           - play a sound
   # -----------------------------------------------------------------------
 
   placeholder_1:
